@@ -93,7 +93,7 @@ const DataForm = ({ dataformId }) => {
             boxShadow:
               "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",
             marginBottom: "35px",
-            width: "clamp(15rem, 50vw, 60rem)",
+            width: "clamp(18rem, 50vw, 60rem)",
           }}
         >
           <p className={errClass}>
@@ -108,9 +108,13 @@ const DataForm = ({ dataformId }) => {
             }}
           >
             <p>form by {dataform.user_id?.username}</p>
-            <h1>Title: {dataform.form_title} </h1>
+            <h1 style={{ fontSize: "clamp(1.3rem, 3vw, 3rem)" }}>
+              Title: {dataform.form_title}{" "}
+            </h1>
             <span>Description</span>
-            <p>{dataform.form_desc} </p>
+            <p style={{ fontSize: "clamp(.6rem, 2vw, 1rem)" }}>
+              {dataform.form_desc}{" "}
+            </p>
             <hr />
           </div>
 

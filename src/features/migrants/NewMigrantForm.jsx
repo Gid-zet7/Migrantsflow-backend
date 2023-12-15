@@ -205,6 +205,7 @@ const NewMigrantForm = () => {
               className="icon-button"
               title="Save"
               disabled={!canSave}
+              style={{ color: "#fff" }}
             >
               Save
             </button>

@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import DashboardLayout from "./components/DashboardLayout";
 import Public from "./components/Public";
-import Signup from "./features/auth/Signup";
+// import Signup from "./features/auth/Signup";
 import Welcome from "./features/auth/Welcome";
 import MigrantsList from "./features/migrants/MigrantsList";
 import UsersList from "./features/users/UsersList";
@@ -25,7 +25,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Public />} />
         <Route path="login" element={<Login />} />
-        <Route path="signup" element={<Signup />} />
+        {/* <Route path="signup" element={<Signup />} /> */}
         <Route path="dataforms">
           <Route index element={<DataFormsList />} />
           <Route path="addform" element={<NewDataForm />} />

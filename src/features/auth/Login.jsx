@@ -79,7 +79,7 @@ const Login = () => {
         </p>
         <form id="login_form" onSubmit={handleSubmit}>
           <div id="auth_header">
-            <h2>Login</h2>
+            <h2 style={{ color: "#fff" }}>Login</h2>
           </div>
           <label htmlFor="username">Username:</label>
           <input
@@ -100,7 +100,12 @@ const Login = () => {
             required
           />
 
-          <button type="submit" id="auth__btn" className="btn">
+          <button
+            type="submit"
+            id="auth__btn"
+            className="btn"
+            style={{ color: "#fff" }}
+          >
             Log In
           </button>
 
@@ -114,10 +119,10 @@ const Login = () => {
             Trust this Device
           </label>
 
-          <div className="auth__container">
+          {/* <div className="auth__container">
             Don&apos;t have an account yet?
             <Link to="/signup"> sign up</Link>
-          </div>
+          </div> */}
 
           <div className="home-link__container">
             <Link to="/">Back to Home</Link>
