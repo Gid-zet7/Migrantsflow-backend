@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCredentials } from "./authSlice";
@@ -7,7 +7,6 @@ import { PulseLoader } from "react-spinners";
 import usePersist from "../../hooks/usePersist";
 
 const Login = () => {
-  const errRef = useRef();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
@@ -47,7 +46,6 @@ const Login = () => {
       } else {
         setErrMsg(err.data?.message);
       }
-      errRef.current.focus();
     }
   };
 
@@ -76,7 +74,7 @@ const Login = () => {
       }}
     >
       <div>
-        <p ref={errRef} className={errClass} aria-live="assertive">
+        <p className={errClass} aria-live="assertive">
           {errMsg}
         </p>
         <form id="login_form" onSubmit={handleSubmit}>

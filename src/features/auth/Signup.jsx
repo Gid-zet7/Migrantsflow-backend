@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCredentials } from "./authSlice";
@@ -6,8 +6,6 @@ import { useSignupMutation } from "./authApiSlice";
 import { PulseLoader } from "react-spinners";
 
 const Signup = () => {
-  const userRef = useRef();
-  const errRef = useRef();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,10 +15,6 @@ const Signup = () => {
   const dispatch = useDispatch();
 
   const [signup, { isLoading }] = useSignupMutation();
-
-  useEffect(() => {
-    userRef.current.focus();
-  }, []);
 
   useEffect(() => {
     setErrMsg("");
@@ -49,7 +43,6 @@ const Signup = () => {
       } else {
         setErrMsg(err.data?.message);
       }
-      errRef.current.focus();
     }
   };
 
@@ -77,7 +70,7 @@ const Signup = () => {
       }}
     >
       <div>
-        <p ref={errRef} className={errClass} aria-live="assertive">
+        <p className={errClass} aria-live="assertive">
           {errMsg}
         </p>
         <form id="auth_form" onSubmit={handleSubmit}>
@@ -89,7 +82,6 @@ const Signup = () => {
             id="username"
             name="username"
             type="text"
-            ref={userRef}
             value={username}
             onChange={handleUserInput}
             autoComplete="off"
