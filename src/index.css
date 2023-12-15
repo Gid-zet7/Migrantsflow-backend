@@ -553,7 +553,7 @@ footer>div {
   }
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -568,7 +568,7 @@ footer>div {
   }
 
 
-}
+} */
 
 /* .table--migrants tbody tr td:nth-child(2) {
   background-color: #213547;
